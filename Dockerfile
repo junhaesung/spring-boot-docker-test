@@ -1,11 +1,10 @@
 FROM adoptopenjdk/openjdk11:jre-11.0.6_10-alpine
 EXPOSE 8080
 
-# tzdata for timzone
-RUN apt-get update -y
-RUN apt-get install -y tzdata
-# timezone env with default
-ENV TZ Asia/Seoul
+# timezone for alpine
+RUN apk --no-cache add tzdata && \
+        cp /usr/share/zoneinfo/Asia/Seoul /etc/localtime && \
+        echo "Asia/Seoul" > /etc/timezone
 
 RUN addgroup -S spring && adduser -S spring -G spring
 USER spring:spring
