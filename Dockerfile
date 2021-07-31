@@ -1,4 +1,4 @@
-FROM openjdk:11-alpine
+FROM adoptopenjdk/openjdk11:jre-11.0.6_10-alpine
 EXPOSE 8080
 
 # tzdata for timzone
