@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 @RestController
 public class SpringBootDockerApplication {
 
-	@RequestMapping("/")
+	@RequestMapping("/hello")
 	public String home() {
 		return "Hello Docker World";
 	}
